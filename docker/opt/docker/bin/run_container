@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -XX:+UseG1GC -jar ${APP_JAR}
