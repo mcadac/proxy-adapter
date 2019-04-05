@@ -1,9 +1,0 @@
-com\payu\client\ProxyInterface.class
-com\payu\controller\ListenerController.class
-com\payu\model\GeneralState.class
-com\payu\process\LeaderPingSchedule.class
-com\payu\model\Leader.class
-com\payu\application\ProxyAdapterPayuApplication.class
-com\payu\client\ProxyService.class
-com\payu\controller\SpeakerController.class
-com\payu\model\LeaderState.class
