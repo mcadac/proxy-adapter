@@ -11,14 +11,17 @@ import retrofit2.Response;
 import retrofit2.converter.gson.*;
 
 import com.payu.model.*;
+import com.payu.process.*;
 
 @Service
 public class ProxyService {
 
     private List<ProxyInterface> proxyClients = new ArrayList<>();
 
-
     private String myHost;
+
+    @Autowired
+    private ServerProxySocketListener serverProxySocketListener;
 
 
     @Autowired
@@ -98,6 +101,7 @@ public class ProxyService {
         GeneralState.setCurrentLeader(new Pair<>(myHost,myHost.split("//")[1]));
         final Leader leader = new Leader(myHost, GeneralState.getPriority().toString());
 
+        serverProxySocketListener.init();
         proxyClients.stream()
                 .map(client ->{
                     return CompletableFuture.supplyAsync(() -> {
